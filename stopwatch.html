@@ -14,7 +14,9 @@
     <br><br>
     <button class="start">start</button>
     <button class="stop">stop</button>
+    <button class="laps">laps</button>
     <button class="reset">reset</button>
+    <div class="times"></div>
 </body>
 <script>
 
@@ -25,6 +27,9 @@
     let startbtn = document.querySelector('.start')
     let stopbtn = document.querySelector('.stop')
     let resetbtn = document.querySelector('.reset')
+    let lapsbtn = document.querySelector('.laps')
+
+    let div = document.querySelector('.times')
 
     let hrs = 0;
     let min = 0;
@@ -78,6 +83,11 @@
         }
     }
 
+    lapsbtn.onclick = () =>{
+        let para = document.createElement('p')
+        para.innerHTML = `${hrs} : ${min} : ${sec}`
+        div.appendChild(para)
+    }
 
 
 
